@@ -13,4 +13,8 @@
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
+    <string name="send_code">Send Code</string>
+    <string name="recover_your_account">Recover your account</string>
+    <string name="enter_email">Enter Email</string>
+    <string name="recover_your_account1">Recover your Account</string>
 </resources>
