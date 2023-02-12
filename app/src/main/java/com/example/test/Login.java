@@ -8,7 +8,7 @@ import android.view.View;
 import android.widget.TextView;
 
 //action listener for button
-public class Login extends AppCompatActivity implements View.OnClickListener {
+public class Login extends AppCompatActivity {
 
     private TextView register1;
     private TextView forgot;
@@ -19,23 +19,29 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
         setContentView(R.layout.activity_login);
 
 
-        //when "create account" text is pressed it redirects to register page
         register1 = (TextView) findViewById(R.id.register1);
         forgot = (TextView) findViewById(R.id.forgot);
-        register1.setOnClickListener(this);
-        forgot.setOnClickListener(this);
-    }
 
-    @Override
-    public void onClick(View v) {
-        switch (v.getId()) {
-            case R.id.register1:
-                startActivity(new Intent(Login.this, Register.class));
-                break;
-            case R.id.forgot:
-                startActivity(new Intent(Login.this, ForgotPass.class));
-                break;
 
-        }
+        //when "create account" text is pressed it redirects to register page
+        register1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Login.this, Register.class);
+                startActivity(intent);
+            }
+        });
+        //when "Forget my Password" text is pressed it redirects to forgotpass page
+        forgot.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Login.this, ForgotPass.class);
+                startActivity(intent);
+            }
+        });
+
+
+
+
     }
 }
